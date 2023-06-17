@@ -1,0 +1,20 @@
+name: space_shooter_workshop
+description: The start of a space shooter game for the FlutterCon 2023 workshop.
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: '>=3.0.5 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flame: ^1.8.0
+  flame_lint: ^1.0.0
+
+flutter:
+  uses-material-design: true
