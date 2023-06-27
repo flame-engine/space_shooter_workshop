@@ -1,5 +1,6 @@
 import 'package:flame/components.dart';
 import 'package:flutter/services.dart';
+import 'package:space_shooter_workshop/components/components.dart';
 import 'package:space_shooter_workshop/game.dart';
 
 class Player extends SpriteAnimationComponent
@@ -45,6 +46,10 @@ class Player extends SpriteAnimationComponent
             _direction.y = 0;
             return false;
           },
+          LogicalKeyboardKey.space: (_) {
+            _shoot();
+            return false;
+          },
         },
         keyDown: {
           LogicalKeyboardKey.keyA: (_) {
@@ -63,7 +68,20 @@ class Player extends SpriteAnimationComponent
             _direction.y = 1;
             return false;
           },
+          LogicalKeyboardKey.space: (_) => false,
         },
+      ),
+    );
+  }
+
+  void _shoot() {
+    gameRef.add(
+      Shoot(
+        position: position.clone() -
+            Vector2(
+              0,
+              size.y / 2,
+            ),
       ),
     );
   }
