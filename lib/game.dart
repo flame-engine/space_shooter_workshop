@@ -6,6 +6,7 @@ class SpaceShooterGame extends FlameGame with HasKeyboardHandlerComponents {
   SpaceShooterGame()
       : super(
           children: [
+            EnemySpawner(),
             Player(),
           ],
         );
