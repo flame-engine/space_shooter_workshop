@@ -1,9 +1,12 @@
 import 'dart:math';
 
+import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
+import 'package:space_shooter_workshop/components/components.dart';
 import 'package:space_shooter_workshop/game.dart';
 
-class Enemy extends SpriteAnimationComponent with HasGameRef<SpaceShooterGame> {
+class Enemy extends SpriteAnimationComponent
+    with HasGameRef<SpaceShooterGame>, CollisionCallbacks {
   Enemy({
     super.position,
   }) : super(
@@ -24,6 +27,13 @@ class Enemy extends SpriteAnimationComponent with HasGameRef<SpaceShooterGame> {
     );
 
     size = Vector2.all(32);
+
+    add(
+      RectangleHitbox.relative(
+        Vector2(0.8, 0.8),
+        parentSize: size,
+      ),
+    );
   }
 
   @override
@@ -34,6 +44,15 @@ class Enemy extends SpriteAnimationComponent with HasGameRef<SpaceShooterGame> {
 
     if (position.y >= gameRef.size.y) {
       removeFromParent();
+    }
+  }
+
+  @override
+  void onCollisionStart(Set<Vector2> points, PositionComponent other) {
+    super.onCollisionStart(points, other);
+    if (other is Shoot) {
+      removeFromParent();
+      other.removeFromParent();
     }
   }
 }

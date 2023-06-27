@@ -1,3 +1,4 @@
+import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
 import 'package:space_shooter_workshop/game.dart';
 
@@ -22,6 +23,14 @@ class Shoot extends SpriteAnimationComponent with HasGameRef<SpaceShooterGame> {
     );
 
     size = Vector2.all(32);
+
+    add(
+      RectangleHitbox.relative(
+        Vector2(0.8, 0.8),
+        parentSize: size,
+        collisionType: CollisionType.passive,
+      ),
+    );
   }
 
   @override
