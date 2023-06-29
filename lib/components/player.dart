@@ -100,6 +100,7 @@ class Player extends SpriteAnimationComponent
     if (other is Enemy) {
       removeFromParent();
       other.removeFromParent();
+      game.add(Explosion(position: position));
       game.restartGame();
     }
   }
