@@ -1,10 +1,11 @@
+import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
 import 'package:flutter/services.dart';
 import 'package:space_shooter_workshop/components/components.dart';
 import 'package:space_shooter_workshop/game.dart';
 
 class Player extends SpriteAnimationComponent
-    with HasGameRef<SpaceShooterGame> {
+    with HasGameRef<SpaceShooterGame>, CollisionCallbacks {
   Player()
       : super(
           anchor: Anchor.center,
@@ -26,6 +27,13 @@ class Player extends SpriteAnimationComponent
 
     size = Vector2.all(96);
     position = gameRef.size / 2;
+
+    add(
+      RectangleHitbox.relative(
+        Vector2(0.8, 0.8),
+        parentSize: size,
+      ),
+    );
 
     add(
       KeyboardListenerComponent(
@@ -84,6 +92,16 @@ class Player extends SpriteAnimationComponent
             ),
       ),
     );
+  }
+
+  @override
+  void onCollisionStart(Set<Vector2> points, PositionComponent other) {
+    super.onCollisionStart(points, other);
+    if (other is Enemy) {
+      removeFromParent();
+      other.removeFromParent();
+      game.restartGame();
+    }
   }
 
   @override

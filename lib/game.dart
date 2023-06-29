@@ -11,4 +11,8 @@ class SpaceShooterGame extends FlameGame
             Player(),
           ],
         );
+
+  void restartGame() {
+    add(Player());
+  }
 }
