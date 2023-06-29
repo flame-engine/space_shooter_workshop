@@ -7,6 +7,7 @@ class SpaceShooterGame extends FlameGame
   SpaceShooterGame()
       : super(
           children: [
+            Background(),
             EnemySpawner(),
             Player(),
           ],
