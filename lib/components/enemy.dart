@@ -52,6 +52,7 @@ class Enemy extends SpriteAnimationComponent
     super.onCollisionStart(points, other);
     if (other is Shoot) {
       game.add(Explosion(position: position));
+      game.increaseScore();
       removeFromParent();
       other.removeFromParent();
     }
