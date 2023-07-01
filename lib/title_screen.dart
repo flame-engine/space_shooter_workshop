@@ -5,6 +5,12 @@ import 'package:space_shooter_workshop/game/game_page.dart';
 class TitleScreen extends StatefulWidget {
   const TitleScreen({super.key});
 
+  static MaterialPageRoute route() {
+    return MaterialPageRoute<void>(
+      builder: (_) => const TitleScreen(),
+    );
+  }
+
   @override
   State<TitleScreen> createState() => _TitleScreenState();
 }

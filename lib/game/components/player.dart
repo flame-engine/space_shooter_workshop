@@ -98,10 +98,10 @@ class Player extends SpriteAnimationComponent
   void onCollisionStart(Set<Vector2> points, PositionComponent other) {
     super.onCollisionStart(points, other);
     if (other is Enemy) {
-      removeFromParent();
       other.removeFromParent();
       game.add(Explosion(position: position));
-      game.restartGame();
+
+      game.tookHit();
     }
   }
 
