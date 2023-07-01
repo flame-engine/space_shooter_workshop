@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flame/components.dart';
 import 'package:flame/parallax.dart';
 import 'package:flutter/widgets.dart';
-import 'package:space_shooter_workshop/game.dart';
+import 'package:space_shooter_workshop/game/game.dart';
 
 class Background extends ParallaxComponent<SpaceShooterGame> {
   @override

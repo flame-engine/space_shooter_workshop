@@ -1,8 +1,8 @@
 import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
 import 'package:flutter/services.dart';
-import 'package:space_shooter_workshop/components/components.dart';
-import 'package:space_shooter_workshop/game.dart';
+import 'package:space_shooter_workshop/game/components/components.dart';
+import 'package:space_shooter_workshop/game/game.dart';
 
 class Player extends SpriteAnimationComponent
     with HasGameRef<SpaceShooterGame>, CollisionCallbacks {

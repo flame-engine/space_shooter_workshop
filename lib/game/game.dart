@@ -1,7 +1,6 @@
 import 'package:flame/game.dart';
 import 'package:flame/input.dart';
-import 'package:space_shooter_workshop/components/components.dart';
-import 'package:space_shooter_workshop/components/score_counter.dart';
+import 'package:space_shooter_workshop/game/components/components.dart';
 
 class SpaceShooterGame extends FlameGame
     with HasKeyboardHandlerComponents, HasCollisionDetection {
