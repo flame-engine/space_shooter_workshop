@@ -76,7 +76,7 @@ class Player extends SpriteAnimationComponent
 
   void _shoot() {
     gameRef.add(
-      Shoot(
+      Shot(
         position: position.clone() -
             Vector2(
               0,
