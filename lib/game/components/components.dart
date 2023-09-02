@@ -4,4 +4,4 @@ export 'explosion.dart';
 export 'player.dart';
 export 'score_counter.dart';
 export 'shield_counter.dart';
-export 'shoot.dart';
+export 'shot.dart';
