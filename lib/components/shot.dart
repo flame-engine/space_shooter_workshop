@@ -1,8 +1,8 @@
 import 'package:flame/components.dart';
 import 'package:space_shooter_workshop/game.dart';
 
-class Shoot extends SpriteAnimationComponent with HasGameRef<SpaceShooterGame> {
-  Shoot({
+class Shot extends SpriteAnimationComponent with HasGameRef<SpaceShooterGame> {
+  Shot({
     super.position,
   }) : super(
           anchor: Anchor.center,
