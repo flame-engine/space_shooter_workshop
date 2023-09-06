@@ -9,7 +9,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  
   flame: ^1.8.2
 
 dev_dependencies:
