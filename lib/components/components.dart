@@ -1,2 +1,2 @@
 export 'player.dart';
-export 'shot.dart';
+export 'shoot.dart';
