@@ -50,7 +50,7 @@ class Enemy extends SpriteAnimationComponent
   @override
   void onCollisionStart(Set<Vector2> points, PositionComponent other) {
     super.onCollisionStart(points, other);
-    if (other is Shot) {
+    if (other is Shoot) {
       game.add(Explosion(position: position));
       removeFromParent();
       other.removeFromParent();
