@@ -56,6 +56,6 @@ class Background extends ParallaxComponent<SpaceShooterGame> {
 
     parallax = Parallax(layers, baseVelocity: Vector2(0, -1));
 
-    size = gameRef.size.clone();
+    size = game.size.clone();
   }
 }
