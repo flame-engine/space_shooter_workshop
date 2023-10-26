@@ -50,3 +50,5 @@ linux/
 macos/
 web/
 windows/
+
+pubspec.lock
