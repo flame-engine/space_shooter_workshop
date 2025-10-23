@@ -2,13 +2,12 @@ import 'package:flame/components.dart';
 import 'package:space_shooter_workshop/game.dart';
 
 class Explosion extends SpriteAnimationComponent
-    with HasGameRef<SpaceShooterGame> {
-  Explosion({
-    super.position,
-  }) : super(
-          anchor: Anchor.center,
-          removeOnFinish: true,
-        );
+    with HasGameReference<SpaceShooterGame> {
+  Explosion({super.position})
+    : super(
+        anchor: Anchor.center,
+        removeOnFinish: true,
+      );
 
   @override
   Future<void> onLoad() async {
