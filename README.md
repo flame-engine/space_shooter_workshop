@@ -14,7 +14,8 @@ solution to each step.
 | step4       | Add Shot component                              |
 | step5       | Add an Enemy component and a spawner            |
 | step6       | Add collision detection between shots & enemies |
-| step7       | Add Game Over state                             |
+| step7       | Add Restart functionality                       |
+| step8       | Add background                                  |
 | bonus_step1 | Add Parallax background and explosions          |
 | bonus_step2 | Add score                                       |
 | bonus_step3 | Add title screen                                |
