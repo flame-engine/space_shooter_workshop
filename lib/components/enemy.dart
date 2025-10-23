@@ -6,12 +6,8 @@ import 'package:space_shooter_workshop/components/components.dart';
 import 'package:space_shooter_workshop/game.dart';
 
 class Enemy extends SpriteAnimationComponent
-    with HasGameRef<SpaceShooterGame>, CollisionCallbacks {
-  Enemy({
-    super.position,
-  }) : super(
-          anchor: Anchor.center,
-        );
+    with HasGameReference<SpaceShooterGame>, CollisionCallbacks {
+  Enemy({super.position}) : super(anchor: Anchor.center);
 
   static const _speed = 150.0;
 
@@ -42,7 +38,7 @@ class Enemy extends SpriteAnimationComponent
 
     position.y += _speed * dt;
 
-    if (position.y >= gameRef.size.y) {
+    if (position.y >= game.size.y) {
       removeFromParent();
     }
   }
@@ -50,31 +46,29 @@ class Enemy extends SpriteAnimationComponent
   @override
   void onCollisionStart(Set<Vector2> points, PositionComponent other) {
     super.onCollisionStart(points, other);
-    if (other is Shoot) {
+    if (other is Shot) {
       removeFromParent();
       other.removeFromParent();
     }
   }
 }
 
-class EnemySpawner extends TimerComponent with HasGameRef<SpaceShooterGame> {
+class EnemySpawner extends TimerComponent
+    with HasGameReference<SpaceShooterGame> {
   EnemySpawner()
-      : super(
-          repeat: true,
-          period: 1,
-          autoStart: true,
-        );
+    : super(
+        repeat: true,
+        period: 1,
+        autoStart: true,
+      );
 
   final _random = Random();
 
   @override
   void onTick() {
-    gameRef.add(
+    game.add(
       Enemy(
-        position: Vector2(
-          _random.nextDouble() * gameRef.size.y,
-          -32,
-        ),
+        position: Vector2(_random.nextDouble() * game.size.y, -32),
       ),
     );
   }

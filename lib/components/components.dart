@@ -1,3 +1,3 @@
 export 'enemy.dart';
 export 'player.dart';
-export 'shoot.dart';
+export 'shot.dart';
