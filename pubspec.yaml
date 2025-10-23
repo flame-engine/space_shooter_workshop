@@ -1,10 +1,10 @@
 name: space_shooter_workshop
-description: The start of a space shooter workshop.
+description: A Flame space shooter workshop.
 publish_to: 'none'
 version: 0.1.0
 
 environment:
-  sdk: '>=3.0.5 <4.0.0'
+  sdk: '>=3.9.0 <4.0.0'
 
 dependencies:
   flame: ^1.33.0
