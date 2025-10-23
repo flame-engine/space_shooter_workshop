@@ -5,10 +5,7 @@ import 'package:space_shooter_workshop/game.dart';
 
 class Player extends SpriteAnimationComponent
     with HasGameReference<SpaceShooterGame> {
-  Player()
-    : super(
-        anchor: Anchor.center,
-      );
+  Player() : super(anchor: Anchor.center);
 
   static const _speed = 400.0;
   final _direction = Vector2.zero();
@@ -76,14 +73,7 @@ class Player extends SpriteAnimationComponent
 
   void _shoot() {
     game.add(
-      Shot(
-        position:
-            position.clone() -
-            Vector2(
-              0,
-              size.y / 2,
-            ),
-      ),
+      Shot(position: position - Vector2(0, size.y / 2)),
     );
   }
 
