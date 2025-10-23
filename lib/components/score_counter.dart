@@ -5,9 +5,7 @@ import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ScoreCounter extends TextComponent {
-  ScoreCounter({
-    super.position,
-  }) : super(priority: 20);
+  ScoreCounter({super.position}) : super(priority: 20);
 
   int _score = 0;
 
