@@ -2,12 +2,9 @@ import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
 import 'package:space_shooter_workshop/game/game.dart';
 
-class Shot extends SpriteAnimationComponent with HasGameRef<SpaceShooterGame> {
-  Shot({
-    super.position,
-  }) : super(
-          anchor: Anchor.center,
-        );
+class Shot extends SpriteAnimationComponent
+    with HasGameReference<SpaceShooterGame> {
+  Shot({super.position}) : super(anchor: Anchor.center);
 
   static const _speed = -400.0;
 

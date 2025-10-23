@@ -5,10 +5,9 @@ import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:space_shooter_workshop/game/game.dart';
 
-class ScoreCounter extends PositionComponent with HasGameRef<SpaceShooterGame> {
-  ScoreCounter({
-    super.position,
-  }) : super(priority: 20);
+class ScoreCounter extends PositionComponent
+    with HasGameReference<SpaceShooterGame> {
+  ScoreCounter({super.position}) : super(priority: 20);
 
   late final TextComponent _text = TextComponent(
     position: Vector2(16, 24),
@@ -37,7 +36,7 @@ class ScoreCounter extends PositionComponent with HasGameRef<SpaceShooterGame> {
 
   @override
   FutureOr<void> onLoad() async {
-    final nineTitleBoxSprite = await gameRef.loadSprite(
+    final nineTitleBoxSprite = await game.loadSprite(
       'nine_tile_box.png',
     );
 

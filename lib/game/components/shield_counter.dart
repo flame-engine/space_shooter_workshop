@@ -6,7 +6,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:space_shooter_workshop/game/game.dart';
 
 class ShieldCounter extends PositionComponent
-    with HasGameRef<SpaceShooterGame> {
+    with HasGameReference<SpaceShooterGame> {
   ShieldCounter({
     super.position,
     this.initialShieldCount = 3,
@@ -34,11 +34,11 @@ class ShieldCounter extends PositionComponent
 
   @override
   FutureOr<void> onLoad() async {
-    final nineTitleBoxSprite = await gameRef.loadSprite(
+    final nineTitleBoxSprite = await game.loadSprite(
       'nine_tile_box.png',
     );
 
-    final energyCell = await gameRef.loadSprite(
+    final energyCell = await game.loadSprite(
       'energy_cell.png',
     );
 
