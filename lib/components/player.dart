@@ -2,11 +2,11 @@ import 'package:flame/components.dart';
 import 'package:space_shooter_workshop/game.dart';
 
 class Player extends SpriteAnimationComponent
-    with HasGameRef<SpaceShooterGame> {
+    with HasGameReference<SpaceShooterGame> {
   Player()
-      : super(
-          anchor: Anchor.center,
-        );
+    : super(
+        anchor: Anchor.center,
+      );
 
   @override
   Future<void> onLoad() async {
@@ -20,6 +20,6 @@ class Player extends SpriteAnimationComponent
     );
 
     size = Vector2.all(96);
-    position = gameRef.size / 2;
+    position = game.size / 2;
   }
 }
