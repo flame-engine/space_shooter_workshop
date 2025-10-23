@@ -4,11 +4,8 @@ import 'package:space_shooter_workshop/components/components.dart';
 import 'package:space_shooter_workshop/game.dart';
 
 class Player extends SpriteAnimationComponent
-    with HasGameRef<SpaceShooterGame> {
-  Player()
-      : super(
-          anchor: Anchor.center,
-        );
+    with HasGameReference<SpaceShooterGame> {
+  Player() : super(anchor: Anchor.center);
 
   static const _speed = 400.0;
   final _direction = Vector2.zero();
@@ -25,7 +22,7 @@ class Player extends SpriteAnimationComponent
     );
 
     size = Vector2.all(96);
-    position = gameRef.size / 2;
+    position = game.size / 2;
 
     add(
       KeyboardListenerComponent(
@@ -75,14 +72,8 @@ class Player extends SpriteAnimationComponent
   }
 
   void _shoot() {
-    gameRef.add(
-      Shoot(
-        position: position.clone() -
-            Vector2(
-              0,
-              size.y / 2,
-            ),
-      ),
+    game.add(
+      Shot(position: position - Vector2(0, size.y / 2)),
     );
   }
 
