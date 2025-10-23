@@ -46,16 +46,11 @@ class Background extends ParallaxComponent<SpaceShooterGame> {
     ]);
 
     final layers = parallaxImages
-        .map(
-          (e) => ParallaxLayer(
-            e,
-            velocityMultiplier: Vector2(0, 4.0),
-          ),
-        )
+        .map((e) => ParallaxLayer(e, velocityMultiplier: Vector2(0, 4.0)))
         .toList();
 
     parallax = Parallax(layers, baseVelocity: Vector2(0, -1));
 
-    size = gameRef.size.clone();
+    size = game.size.clone();
   }
 }
