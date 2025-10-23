@@ -53,7 +53,8 @@ class Enemy extends SpriteAnimationComponent
   }
 }
 
-class EnemySpawner extends TimerComponent with HasGameRef<SpaceShooterGame> {
+class EnemySpawner extends TimerComponent
+    with HasGameReference<SpaceShooterGame> {
   EnemySpawner()
     : super(
         repeat: true,
@@ -65,9 +66,9 @@ class EnemySpawner extends TimerComponent with HasGameRef<SpaceShooterGame> {
 
   @override
   void onTick() {
-    gameRef.add(
+    game.add(
       Enemy(
-        position: Vector2(_random.nextDouble() * gameRef.size.y, -32),
+        position: Vector2(_random.nextDouble() * game.size.y, -32),
       ),
     );
   }
